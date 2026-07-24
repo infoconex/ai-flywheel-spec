@@ -54,6 +54,30 @@ Model confidence, task completion, or the absence of an exception is not enough 
 
 See [Principle 5: Execution Must Produce Outcome Evidence](principles/05-outcome-evidence.md).
 
+## Authorized Unit of Work
+
+An **authorized unit of work** is the mission, goal, task, ticket, trigger, runbook invocation, or equivalent durable work item that defines what the Flywheel is allowed and expected to perform.
+
+It provides the scope needed to select governance, apply procedural guidance, attribute evidence, and determine whether later validation, persistence, and reuse belong to the same work.
+
+See [Operational Scope and Constraint Gates](operational-scope-and-constraint-gates.md).
+
+## Execution Context
+
+**Execution context** is the active operational state that ties a specific execution attempt to its authorized unit of work, applicable governance, procedural guidance, evidence, decisions, validation results, and learning outputs.
+
+It allows reviewers and future executions to determine which work produced which evidence.
+
+See [Stage 1: Execute](lifecycle/01-execute.md).
+
+## Constraint Gate
+
+A **constraint gate** is an explicit check that determines whether a proposed action or adaptation is authorized, approval required, judgment required, or prohibited before the Flywheel applies, activates, or persists the result.
+
+Constraint gates may enforce governance policy, human restrictions, SOP rules, protected assets, environment limits, or validated learning from prior execution.
+
+See [Operational Scope and Constraint Gates](operational-scope-and-constraint-gates.md) and [Stage 5: Adapt](lifecycle/05-adapt.md).
+
 ## Persistent Operational Asset
 
 A **persistent operational asset** is a durable operational form through which validated learning can affect future execution. Examples include deterministic capability, code, SOP guidance, validation rules, configuration, reasoning knowledge, reusable examples, constraints, structured knowledge, failure-derived rules, and approved governance changes.
