@@ -18,6 +18,7 @@ Adapt requires:
 - The current persistent operational assets
 - The current placement of responsibility across the Moving Determinism Boundary
 - The applicable Governance Policy
+- Applicable constraints from human instructions, SOP rules, current validated learning, protected assets, and the authorized unit of work
 
 Adaptation requires a supported classification. An unsupported preference for a tool, technology, prompt, code change, or other mechanism is not enough.
 
@@ -31,6 +32,7 @@ When adaptation is justified, Adapt must:
 - State the expected improvement the candidate is intended to produce
 - Identify enough validation intent to allow the candidate itself to be evaluated
 - Keep the proposed or applied change within the applicable Governance Policy
+- Check applicable constraints before applying, activating, or persisting the candidate change
 
 When classification determines that no adaptation is justified, Adapt must explicitly record that no candidate change is required and preserve the evidence supporting continuation of the current operating pattern.
 
@@ -87,12 +89,16 @@ Its candidate improvement or explicit no-change resolution becomes the primary i
 
 Not every adaptation may be applied autonomously.
 
-The Governance Policy determines whether a proposed change is:
+The Governance Policy and applicable constraint gate determine whether a proposed change is:
 
 - Authorized
 - Approval Required
 - Judgment Required
 - Prohibited
+
+The constraint gate must be evaluated before a candidate adaptation is applied, activated, or persisted for future use. It should account for human restrictions, protected assets, current validated learning, SOP rules, environment limits, and any other constraints applicable to the authorized unit of work.
+
+A prohibited candidate must not be applied or persisted as approved behavior. A candidate requiring approval or judgment must stop at the applicable boundary until the required human decision is obtained and preserved as evidence.
 
 The AI may recommend an expansion of its authority but may not grant itself additional authority.
 
@@ -115,3 +121,4 @@ Where approval is required before a candidate can be tested or applied in an iso
 
 - [Learning Architecture](../../architecture/learning-view.md)
 - [Core Operating Model](../../architecture/operating-model.md)
+- [Operational Scope and Constraint Gates](../operational-scope-and-constraint-gates.md)
