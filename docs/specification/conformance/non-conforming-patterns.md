@@ -34,6 +34,14 @@ A workflow that records lessons but does not make them available to later execut
 
 The existence of an approval mechanism, escalation path, prohibited-action list, validation step, or other control does not demonstrate conformance when observable operation shows that the control is bypassed, ignored, or not invoked when required.
 
+## Work Outside Authorized Scope
+
+A system that performs governed operational work, persistent operational asset changes, adaptation, validation, persistence, or closeout outside an authorized unit of work and active execution context does not satisfy the operational scope requirements. Attaching evidence to a goal, mission, or task after unrelated work has already occurred is not enough.
+
+## Adaptation Without Constraint Checks
+
+A system that applies, activates, or persists candidate adaptations without first checking applicable governance, human restrictions, SOP rules, protected assets, environment limits, and relevant validated learning does not satisfy the Adapt requirements.
+
 ## Unrestricted Self-Modification
 
 A system with unrestricted self-modification and no human-defined authority boundary does not satisfy [Principle 1: Autonomy Is Bounded by Human Authority](../principles/01-human-authority.md).
