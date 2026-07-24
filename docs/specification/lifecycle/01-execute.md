@@ -13,6 +13,7 @@ The AI is the operator of the process. It follows persistent procedural guidance
 Execute requires:
 
 - An authorized goal, trigger, request, event, or unit of work
+- Active execution context sufficient to attribute evidence and decisions to that unit of work
 - The applicable Governance Policy
 - The current Standard Operating Procedure (SOP) or other persistent procedural guidance
 - Available deterministic capabilities
@@ -20,6 +21,8 @@ Execute requires:
 - The current validated operating state inherited from prior Flywheel cycles, including relevant persisted learning and validated operating patterns
 
 The execution must begin within the authority granted by the applicable Governance Policy.
+
+When an implementation uses explicit missions, goals, tasks, or similar work containers, the required container and execution context must be selected before governed operational changes begin.
 
 ## Required Responsibilities
 
@@ -31,6 +34,7 @@ Execute must:
 - Use deterministic capabilities where reliable repeatable behavior is already available and appropriate
 - Apply relevant current persisted learning and validated operating patterns when they are applicable to the execution
 - Keep actions within the current Governance Policy
+- Keep actions within the selected authorized unit of work and avoid representing unrelated work as part of the execution
 - Produce enough operational information for later observation of what actually occurred
 
 The three operating mechanisms are not separate lifecycle stages. A single execution may move between AI reasoning and deterministic capabilities many times while following the same procedure.
@@ -45,6 +49,7 @@ Execute must produce or preserve an operational record that may include:
 - Errors and exceptions
 - Decisions and escalation events
 - Validation signals generated during operation
+- The active unit of work and execution context for the evidence
 - Other raw events needed to determine what actually occurred
 
 ## Completion Conditions
@@ -62,6 +67,8 @@ Its operational record becomes the primary input to [Stage 2: Observe](02-observ
 ## Governance Considerations
 
 Every action remains subject to the Governance Policy.
+
+Work that has no authorized unit of work, no applicable governance, or no active execution context must not proceed as governed Flywheel execution except for limited discovery required to establish that context.
 
 When execution reaches the Authority Boundary, the affected action must be handled according to its governance outcome: Authorized, Approval Required, or Prohibited.
 
@@ -87,4 +94,5 @@ Where practical, unrelated authorized work should continue rather than stopping 
 
 - [Runtime Architecture](../../architecture/runtime-view.md)
 - [Core Operating Model](../../architecture/operating-model.md)
+- [Operational Scope and Constraint Gates](../operational-scope-and-constraint-gates.md)
 - [Reuse Evidence Requirements](../reuse-evidence.md)

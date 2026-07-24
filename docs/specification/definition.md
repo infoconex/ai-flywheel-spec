@@ -20,6 +20,8 @@ The core cycle is:
 
 Governance applies throughout that cycle. It determines whether an action is authorized, requires human approval, requires human judgment, or is prohibited.
 
+Operational work must occur inside an authorized unit of work with enough active execution context to attribute evidence, decisions, validation, persisted learning, and reuse to the work that produced them. Before candidate adaptations are applied, activated, or persisted, applicable governance, procedural, human-defined, and validated-learning constraints must be checked.
+
 The result is a compounding system in which evidence from repeated execution can improve the operating state, reinforce patterns that continue to work, prevent repeated failures, and challenge learning that is no longer valid. Later execution uses the current validated operating state rather than starting from the same place again.
 
 ## Human Authority and Governance
@@ -65,6 +67,8 @@ The Governance Policy defines what the Flywheel is allowed to do and when human 
 ### Standard Operating Procedure (SOP)
 
 The SOP is the operational control plane. It defines the intended outcome, process, available capabilities, normal execution path, known exception handling, evidence expectations, validation requirements, and escalation conditions.
+
+Where the implementation organizes work into missions, goals, tasks, or executions, the SOP must define how authorized work is selected and how execution context is established before governed operational changes begin.
 
 ### AI Reasoning
 

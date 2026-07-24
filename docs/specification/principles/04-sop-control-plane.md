@@ -16,6 +16,7 @@ A conforming implementation must satisfy these requirements:
 - The procedure is directly available to the AI during operation and survives individual execution contexts.
 - The procedure defines how work should be performed with enough detail to guide reliable execution.
 - Where applicable, it defines intended outcomes, available capabilities, normal execution flow, known conditions and exceptions, failure handling, evidence expectations, validation requirements, and escalation conditions.
+- Where applicable, it defines how authorized work is selected, how active execution context is established, and when work must stop because no authorized mission, goal, task, or equivalent unit of work is active.
 - The SOP guides AI reasoning without trying to remove all judgment.
 - The SOP remains subject to the Governance Policy and may not expand or override human-defined authority.
 - Procedural learning can update the SOP so future executions inherit improved guidance.
@@ -30,6 +31,7 @@ A useful AI Flywheel SOP may contain:
 - Known conditions and exceptions
 - Known failure-handling procedures
 - Expected evidence and logging
+- Work selection, execution-context, and scope rules
 - Validation requirements
 - Conditions requiring AI judgment
 - Escalation conditions
@@ -52,7 +54,7 @@ When the right correction is procedural, the SOP should be updated so future exe
 
 ## Lifecycle Relationship
 
-- **Execute:** The SOP guides the process, capability use, known exception handling, evidence expectations, and escalation.
+- **Execute:** The SOP guides the process, capability use, known exception handling, evidence expectations, escalation, and any required active work context.
 - **Observe and Evaluate:** Execution evidence may reveal weaknesses or unclear parts of the procedure.
 - **Classify:** The Flywheel determines whether learning belongs in procedural guidance.
 - **Adapt:** The SOP is changed when procedure is the right destination.
@@ -66,6 +68,7 @@ Evidence supporting this principle may include:
 - A persistent SOP, runbook, procedure, or equivalent machine-consumable operational asset
 - Proof that the AI directly accesses that guidance during execution
 - Documented normal paths, known exceptions, evidence expectations, validation, or escalation rules
+- Execution records showing work and evidence scoped to the authorized unit of work
 - Execution examples showing that known procedure is reused across separate contexts
 - Examples of execution learning producing durable procedural updates
 
@@ -78,6 +81,7 @@ This principle is not satisfied when:
 - Procedural guidance is unavailable to future operation
 - The procedure is only human documentation that the operating AI does not use
 - The procedure can override governance restrictions
+- The operating process performs governed work outside an authorized active unit of work and attaches the evidence afterward
 
 ## Relationships to Other Principles
 

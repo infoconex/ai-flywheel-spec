@@ -38,6 +38,7 @@ The eight principles and eight-stage lifecycle define the current structure, but
 - [Principles](principles/README.md) — Defines the eight principles of the AI Flywheel, with a dedicated page for each principle.
 - [Lifecycle](lifecycle/README.md) — Defines the recurring cycle: Execute, Observe, Evaluate, Classify, Adapt, Validate, Persist, and Reuse, with governance applied throughout.
 - [Validation Sufficiency Requirements](validation-sufficiency.md) — Defines the minimum evidence conditions required before a candidate improvement or other reusable learning can be treated as sufficiently validated for persistent future use.
+- [Operational Scope and Constraint Gates](operational-scope-and-constraint-gates.md) — Defines requirements for authorized work scope, active execution context, and pre-adaptation constraint enforcement.
 - [Persisted Learning Requirements](persisted-learning.md) — Defines what may count as persisted learning and the minimum properties required for durable future operational use.
 - [Reuse Evidence Requirements](reuse-evidence.md) — Defines the minimum evidence required to demonstrate that relevant persisted learning actually influenced later execution.
 - [Learning Supersession Requirements](learning-supersession.md) — Defines how persisted learning is challenged, revised, superseded, deprecated, invalidated, rolled back, or retired when later evidence changes what should be treated as current guidance.

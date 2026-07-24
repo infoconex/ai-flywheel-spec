@@ -33,17 +33,18 @@ Evidence should show, as applicable:
 - Actual autonomous actions performed within delegated authority.
 - Approval gates being enforced where required.
 - Prohibited actions being blocked.
+- Applicable constraints being checked before candidate adaptations are applied, activated, or persisted.
 - Uncertainty or judgment boundaries causing escalation rather than unsupported autonomous action.
 - Persistent changes being constrained by the same authority model.
 - Any governance change that expands authority receiving human authorization.
 
 ### Assessment condition
 
-This principle conforms when observable operation shows that authority boundaries actively constrain both execution and self-improvement, and the AI cannot bypass, redefine, or expand those boundaries on its own.
+This principle conforms when observable operation shows that authority boundaries actively constrain both execution and self-improvement, applicable constraints are enforced before adaptation changes the operating state, and the AI cannot bypass, redefine, or expand those boundaries on its own.
 
 ### Does not conform when
 
-Examples include prohibited actions succeeding, required approvals being bypassed, unresolved judgment being treated as autonomous certainty, or the AI granting itself broader authority.
+Examples include prohibited actions succeeding, required approvals being bypassed, candidate adaptations being applied without required constraint checks, unresolved judgment being treated as autonomous certainty, or the AI granting itself broader authority.
 
 ## Principle 2: AI Is the Operator, Not Merely the Assistant
 
@@ -105,15 +106,16 @@ Evidence should show:
 - Execution actually consulting or following that procedure where applicable.
 - Guidance for process flow, known conditions, capability use, evidence, validation, and escalation as appropriate to the process.
 - Governance overriding or constraining procedural guidance when required.
+- Work-selection and execution-context rules being followed when the implementation uses missions, goals, tasks, or equivalent work containers.
 - Validated procedural learning being able to change the procedure for later execution.
 
 ### Assessment condition
 
-This principle conforms when procedural guidance is both durable and operationally active in directing execution, rather than merely existing as human documentation.
+This principle conforms when procedural guidance is both durable and operationally active in directing execution, including any required work-scope and execution-context rules, rather than merely existing as human documentation.
 
 ### Does not conform when
 
-The SOP exists only as passive documentation, is not available to the operating process, is routinely ignored, or can override governance.
+The SOP exists only as passive documentation, is not available to the operating process, is routinely ignored, allows governed work outside required active scope, or can override governance.
 
 ## Principle 5: Execution Must Produce Outcome Evidence
 
@@ -129,6 +131,7 @@ Evidence should show:
 - Evaluation against intended outcomes or success criteria.
 - Distinction among verified success, failure, partial success, and unresolved uncertainty.
 - Material human judgments and approvals preserved where they affect the outcome.
+- Attribution of evidence to the authorized unit of work and execution context that produced it.
 - Validation evidence addressing the intended claim rather than technical completion alone.
 - Contradictory, incomplete, or insufficient evidence remaining unresolved rather than being represented as success.
 

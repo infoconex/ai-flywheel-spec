@@ -17,6 +17,8 @@
       url: /docs/specification/principles/
     - title: Lifecycle
       url: /docs/specification/lifecycle/
+    - title: Operational Scope and Constraint Gates
+      url: /docs/specification/operational-scope-and-constraint-gates.html
     - title: Conformance
       url: /docs/specification/conformance/
     - title: Terminology
