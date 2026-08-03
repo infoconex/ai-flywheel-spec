@@ -1,8 +1,8 @@
 title: Infoconex AI Flywheel
 description: An evidence-driven operating model for AI systems that learn from execution and improve how work is performed.
 url: https://infoconex.github.io
-baseurl: /ai-flywheel
-repository: infoconex/ai-flywheel
+baseurl: /ai-flywheel-spec
+repository: infoconex/ai-flywheel-spec
 asset_version: "20260723-1"
 
 markdown: kramdown
