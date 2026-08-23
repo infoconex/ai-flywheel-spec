@@ -1,7 +1,0 @@
----
----
-{% include_relative site.css %}
-{% include_relative navigation.css %}
-{% include_relative header.css %}
-{% include_relative site-features.css %}
-{% include_relative search.css %}
