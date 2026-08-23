@@ -127,14 +127,15 @@
 
   .site-search input {
     width: 100%;
+    font-size: 16px;
   }
 
   .site-search__results {
-    position: fixed;
-    top: calc(var(--header-height) + 8px);
-    left: 12px;
-    right: 12px;
-    width: auto;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: auto;
+    right: 0;
+    width: min(360px, calc(100vw - 24px));
     max-height: calc(100dvh - var(--header-height) - 24px);
   }
 }
