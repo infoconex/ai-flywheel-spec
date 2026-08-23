@@ -14,12 +14,7 @@
     })();
   </script>
   {% seo %}
-  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.asset_version }}">
-  <link rel="stylesheet" href="{{ '/assets/css/navigation.css' | relative_url }}?v={{ site.asset_version }}">
-  <link rel="stylesheet" href="{{ '/assets/css/header.css' | relative_url }}?v={{ site.asset_version }}">
-  <link rel="stylesheet" href="{{ '/assets/css/site-features.css' | relative_url }}?v={{ site.asset_version }}">
-  <link rel="stylesheet" href="{{ '/assets/css/search.css' | relative_url }}?v={{ site.asset_version }}">
-  <link rel="stylesheet" href="{{ '/assets/css/diagram-interactions.css' | relative_url }}?v={{ site.asset_version }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site-bundle.css' | relative_url }}?v={{ site.asset_version }}">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -55,7 +50,7 @@
             <option value="sepia">Sepia</option>
           </select>
         </label>
-        <a class="header-link" href="https://github.com/infoconex/ai-flywheel">GitHub</a>
+        <a class="header-link" href="https://github.com/infoconex/ai-flywheel-spec">GitHub</a>
       </nav>
     </div>
   </header>
@@ -108,7 +103,7 @@
       <footer class="site-footer">
         <span>© 2026 Infoconex. All rights reserved.</span>
         <span aria-hidden="true">·</span>
-        <a href="https://github.com/infoconex/ai-flywheel">View source on GitHub</a>
+        <a href="https://github.com/infoconex/ai-flywheel-spec">View source on GitHub</a>
       </footer>
     </main>
   </div>
@@ -116,51 +111,57 @@
   <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
 
   <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-
-    const expandIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    const collapseIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 9H4V4M15 9h5V4M9 15H4v5M15 15h5v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-
     const blocks = document.querySelectorAll('pre > code.language-mermaid');
-    blocks.forEach((codeBlock) => {
-      const wrapper = document.createElement('div');
-      wrapper.className = 'mermaid-diagram';
-
-      const fullscreenButton = document.createElement('button');
-      fullscreenButton.className = 'mermaid-diagram__fullscreen';
-      fullscreenButton.type = 'button';
-      fullscreenButton.innerHTML = expandIcon;
-      fullscreenButton.setAttribute('aria-label', 'View diagram full screen');
-      fullscreenButton.setAttribute('title', 'View diagram full screen');
-
-      const mermaidBlock = document.createElement('div');
-      mermaidBlock.className = 'mermaid';
-      mermaidBlock.textContent = codeBlock.textContent;
-
-      fullscreenButton.addEventListener('click', async () => {
-        try {
-          if (document.fullscreenElement === wrapper) {
-            await document.exitFullscreen();
-          } else {
-            await wrapper.requestFullscreen();
-          }
-        } catch {
-          // Fullscreen may be unavailable in some embedded browser contexts.
-        }
-      });
-
-      document.addEventListener('fullscreenchange', () => {
-        const isFullscreen = document.fullscreenElement === wrapper;
-        fullscreenButton.innerHTML = isFullscreen ? collapseIcon : expandIcon;
-        fullscreenButton.setAttribute('aria-label', isFullscreen ? 'Exit full screen' : 'View diagram full screen');
-        fullscreenButton.setAttribute('title', isFullscreen ? 'Exit full screen' : 'View diagram full screen');
-      });
-
-      wrapper.append(fullscreenButton, mermaidBlock);
-      codeBlock.parentElement.replaceWith(wrapper);
-    });
 
     if (blocks.length > 0) {
+      const diagramStyles = document.createElement('link');
+      diagramStyles.rel = 'stylesheet';
+      diagramStyles.href = "{{ '/assets/css/diagram-interactions.css' | relative_url }}?v={{ site.asset_version }}";
+      document.head.append(diagramStyles);
+
+      const { default: mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs');
+
+      const expandIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      const collapseIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 9H4V4M15 9h5V4M9 15H4v5M15 15h5v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+      blocks.forEach((codeBlock) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'mermaid-diagram';
+
+        const fullscreenButton = document.createElement('button');
+        fullscreenButton.className = 'mermaid-diagram__fullscreen';
+        fullscreenButton.type = 'button';
+        fullscreenButton.innerHTML = expandIcon;
+        fullscreenButton.setAttribute('aria-label', 'View diagram full screen');
+        fullscreenButton.setAttribute('title', 'View diagram full screen');
+
+        const mermaidBlock = document.createElement('div');
+        mermaidBlock.className = 'mermaid';
+        mermaidBlock.textContent = codeBlock.textContent;
+
+        fullscreenButton.addEventListener('click', async () => {
+          try {
+            if (document.fullscreenElement === wrapper) {
+              await document.exitFullscreen();
+            } else {
+              await wrapper.requestFullscreen();
+            }
+          } catch {
+            // Fullscreen may be unavailable in some embedded browser contexts.
+          }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+          const isFullscreen = document.fullscreenElement === wrapper;
+          fullscreenButton.innerHTML = isFullscreen ? collapseIcon : expandIcon;
+          fullscreenButton.setAttribute('aria-label', isFullscreen ? 'Exit full screen' : 'View diagram full screen');
+          fullscreenButton.setAttribute('title', isFullscreen ? 'Exit full screen' : 'View diagram full screen');
+        });
+
+        wrapper.append(fullscreenButton, mermaidBlock);
+        codeBlock.parentElement.replaceWith(wrapper);
+      });
+
       mermaid.initialize({
         startOnLoad: false,
         theme: 'base',
@@ -177,10 +178,14 @@
       });
 
       await mermaid.run({ querySelector: '.mermaid' });
+
+      const diagramInteractions = document.createElement('script');
+      diagramInteractions.src = "{{ '/assets/js/diagram-interactions.js' | relative_url }}?v={{ site.asset_version }}";
+      diagramInteractions.defer = true;
+      document.body.append(diagramInteractions);
     }
   </script>
   <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
   <script src="{{ '/assets/js/search-v2.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
-  <script src="{{ '/assets/js/diagram-interactions.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
 </body>
 </html>
