@@ -1,0 +1,38 @@
+name: SEO validation and IndexNow
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Install validation dependency
+        run: python3 -m pip install pyyaml
+      - name: Validate SEO metadata and image alt text
+        run: python3 scripts/validate_seo.py
+
+  indexnow:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Allow GitHub Pages time to publish
+        if: github.event_name == 'push'
+        run: sleep 90
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          INDEXNOW_SITE_URL: https://infoconex.github.io/ai-flywheel-spec
+          INDEXNOW_KEY: 8d2ab8da066444dfa9e087400e7d0e10
+          INDEXNOW_KEY_LOCATION: https://infoconex.github.io/ai-flywheel-spec/8d2ab8da066444dfa9e087400e7d0e10.txt
+        run: python3 scripts/indexnow.py
