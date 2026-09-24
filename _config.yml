@@ -59,7 +59,7 @@ defaults:
   - scope: { path: "docs/specification/principles/06-evolution-routing.md" }
     values:
       title: AI Evolution Routing
-      description: Defines how observed weaknesses are routed to the persistent asset best suited to improve future AI Flywheel execution.
+      description: Defines how observed weaknesses are routed to the persistent asset best suited to improve future AI Flywheel execution over time.
   - scope: { path: "docs/specification/principles/07-persistent-learning.md" }
     values:
       title: Persistent AI Learning
@@ -80,11 +80,11 @@ defaults:
   - scope: { path: "docs/research/principles/03-moving-determinism-boundary.md" }
     values:
       title: Determinism Boundary Research
-      description: Reviews research on distributing work across deterministic automation, procedural controls, and adaptive AI reasoning.
+      description: Reviews research on distributing work across deterministic automation, procedural controls, and adaptive AI reasoning in practice.
   - scope: { path: "docs/research/principles/04-sop-control-plane.md" }
     values:
       title: AI Control Plane Research
-      description: Reviews research supporting standard operating procedures as an operational control plane for governed AI execution.
+      description: Reviews research supporting standard operating procedures as an operational control plane for governed AI execution and oversight.
   - scope: { path: "docs/research/principles/05-outcome-evidence.md" }
     values:
       title: Outcome Evidence in AI Systems
@@ -96,7 +96,7 @@ defaults:
   - scope: { path: "docs/research/principles/07-persistent-learning.md" }
     values:
       title: Persistent AI Learning Research
-      description: Reviews research on converting execution learning into persistent assets that can improve later AI system behavior.
+      description: Reviews research on converting execution learning into persistent assets that can improve later AI system behavior and reuse.
   - scope: { path: "docs/research/principles/08-compounding-reuse.md" }
     values:
       title: Compounding AI Improvement Research
