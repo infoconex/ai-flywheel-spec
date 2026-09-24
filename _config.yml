@@ -4,6 +4,7 @@ url: https://infoconex.github.io
 baseurl: /ai-flywheel-spec
 repository: infoconex/ai-flywheel-spec
 asset_version: "20260723-1"
+logo: /ai-flywheel-spec/docs/assets/Infoconex-ai-flywheel-banner.png
 
 markdown: kramdown
 highlighter: rouge
@@ -15,6 +16,7 @@ kramdown:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - scripts
 
 plugins:
   - jekyll-seo-tag
@@ -25,9 +27,98 @@ relative_links:
   enabled: true
   collections: true
 
-# Apply the site layout to existing Markdown without adding frontmatter to every page.
+# Jekyll front matter defaults. Page-specific values keep SEO metadata concise
+# without changing the visible H1 headings in the specification.
 defaults:
   - scope:
       path: ""
     values:
       layout: default
+      image: /ai-flywheel-spec/docs/assets/Infoconex-ai-flywheel-banner.png
+
+  - scope: { path: "docs/specification/principles/01-human-authority.md" }
+    values:
+      title: Human Authority in AI Systems
+      description: Defines how human authority governs AI autonomy, approvals, judgment, and operational boundaries in the Infoconex AI Flywheel.
+  - scope: { path: "docs/specification/principles/02-ai-as-operator.md" }
+    values:
+      title: AI as the Operator
+      description: Defines AI as the active operator of authorized work while preserving human authority, governance, and required escalation boundaries.
+  - scope: { path: "docs/specification/principles/03-moving-determinism-boundary.md" }
+    values:
+      title: Moving the Determinism Boundary
+      description: Defines how work moves among deterministic automation, procedural guidance, and AI reasoning as evidence and capability improve.
+  - scope: { path: "docs/specification/principles/04-sop-control-plane.md" }
+    values:
+      title: SOP as an AI Control Plane
+      description: Defines how standard operating procedures guide AI execution while remaining subordinate to governance and human authority.
+  - scope: { path: "docs/specification/principles/05-outcome-evidence.md" }
+    values:
+      title: Outcome Evidence
+      description: Defines how the AI Flywheel uses outcome evidence to evaluate execution quality, identify weaknesses, and support validated improvement.
+  - scope: { path: "docs/specification/principles/06-evolution-routing.md" }
+    values:
+      title: AI Evolution Routing
+      description: Defines how observed weaknesses are routed to the persistent asset best suited to improve future AI Flywheel execution over time.
+  - scope: { path: "docs/specification/principles/07-persistent-learning.md" }
+    values:
+      title: Persistent AI Learning
+      description: Defines how learning must change persistent operational assets so improvements survive beyond a single AI Flywheel execution.
+  - scope: { path: "docs/specification/principles/08-compounding-reuse.md" }
+    values:
+      title: Compounding AI Improvement
+      description: Defines how validated improvements must be reused in later work so AI Flywheel capability compounds across repeated execution.
+
+  - scope: { path: "docs/research/principles/01-human-authority.md" }
+    values:
+      title: Human Authority in AI Systems Research
+      description: Reviews research supporting bounded AI autonomy, human authority, approval, judgment, and escalation in adaptive operating systems.
+  - scope: { path: "docs/research/principles/02-ai-as-operator.md" }
+    values:
+      title: AI as Operator Research
+      description: Reviews research on AI acting as an operator of work, including autonomous execution, tool use, oversight, and human control.
+  - scope: { path: "docs/research/principles/03-moving-determinism-boundary.md" }
+    values:
+      title: Determinism Boundary Research
+      description: Reviews research on distributing work across deterministic automation, procedural controls, and adaptive AI reasoning in practice.
+  - scope: { path: "docs/research/principles/04-sop-control-plane.md" }
+    values:
+      title: AI Control Plane Research
+      description: Reviews research supporting standard operating procedures as an operational control plane for governed AI execution and oversight.
+  - scope: { path: "docs/research/principles/05-outcome-evidence.md" }
+    values:
+      title: Outcome Evidence in AI Systems
+      description: Reviews research on using observed outcomes and evidence to evaluate AI execution and guide reliable operational improvement.
+  - scope: { path: "docs/research/principles/06-evolution-routing.md" }
+    values:
+      title: AI Evolution Routing Research
+      description: Reviews research on routing observed failures and learning to the tools, procedures, policies, or models best suited to improve.
+  - scope: { path: "docs/research/principles/07-persistent-learning.md" }
+    values:
+      title: Persistent AI Learning Research
+      description: Reviews research on converting execution learning into persistent assets that can improve later AI system behavior and reuse.
+  - scope: { path: "docs/research/principles/08-compounding-reuse.md" }
+    values:
+      title: Compounding AI Improvement Research
+      description: Reviews research on reusing validated learning so operational improvements accumulate and compound across repeated AI execution.
+
+  - scope: { path: "docs/examples/production-incident-response/use-case.md" }
+    values:
+      title: AI Production Incident Response
+      description: Shows how the Infoconex AI Flywheel can investigate, evaluate, adapt, validate, and learn from a production incident response.
+  - scope: { path: "docs/examples/software-maintenance/worked-example.md" }
+    values:
+      title: AI Software Maintenance Example
+      description: Demonstrates the AI Flywheel lifecycle through a worked software maintenance example with evidence, adaptation, and reuse.
+  - scope: { path: "docs/examples/standards-driven-repository-modernization/worked-example.md" }
+    values:
+      title: AI Repository Modernization Example
+      description: Demonstrates repeated repository modernization cycles that produce evidence, persistent learning, and reusable improvements.
+  - scope: { path: "docs/examples/standards-driven-repository-modernization/use-case/README.md" }
+    values:
+      title: AI Repository Modernization Use Case
+      description: Defines a standards-driven repository modernization use case for applying governed AI execution, validation, learning, and reuse.
+  - scope: { path: "TRADEMARKS.md" }
+    values:
+      title: Infoconex Trademarks
+      description: Defines permitted references, naming requirements, restricted uses, and conformance claims for Infoconex AI Flywheel branding.
