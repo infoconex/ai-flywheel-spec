@@ -32,7 +32,7 @@ jobs:
         run: sleep 90
       - name: Submit sitemap URLs to IndexNow
         env:
-          INDEXNOW_SITE_URL: https://infoconex.github.io/ai-flywheel-spec
+          INDEXNOW_SITE_URL: https://ai-flywheel-spec.infoconex.com
           INDEXNOW_KEY: 8d2ab8da066444dfa9e087400e7d0e10
-          INDEXNOW_KEY_LOCATION: https://infoconex.github.io/ai-flywheel-spec/8d2ab8da066444dfa9e087400e7d0e10.txt
+          INDEXNOW_KEY_LOCATION: https://ai-flywheel-spec.infoconex.com/8d2ab8da066444dfa9e087400e7d0e10.txt
         run: python3 scripts/indexnow.py
