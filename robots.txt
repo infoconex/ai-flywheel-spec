@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://infoconex.github.io/ai-flywheel-spec/sitemap.xml
+Sitemap: https://ai-flywheel-spec.infoconex.com/sitemap.xml
