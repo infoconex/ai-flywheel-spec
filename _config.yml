@@ -1,11 +1,11 @@
 title: Infoconex AI Flywheel
 tagline: Self-Improving AI Framework
 description: An evidence-driven operating model for AI systems that learn from execution and improve how work is performed.
-url: https://infoconex.github.io
-baseurl: /ai-flywheel-spec
+url: https://ai-flywheel-spec.infoconex.com
+baseurl: ""
 repository: infoconex/ai-flywheel-spec
 asset_version: "20260723-1"
-logo: /ai-flywheel-spec/docs/assets/Infoconex-ai-flywheel-banner.png
+logo: /docs/assets/Infoconex-ai-flywheel-banner.png
 
 markdown: kramdown
 highlighter: rouge
@@ -35,7 +35,7 @@ defaults:
       path: ""
     values:
       layout: default
-      image: /ai-flywheel-spec/docs/assets/Infoconex-ai-flywheel-banner.png
+      image: /docs/assets/Infoconex-ai-flywheel-banner.png
 
   - scope: { path: "docs/specification/principles/01-human-authority.md" }
     values:
