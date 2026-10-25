@@ -15,7 +15,7 @@ ENDPOINT = "https://api.indexnow.org/indexnow"
 
 def main() -> int:
     site_url = os.environ.get(
-        "INDEXNOW_SITE_URL", "https://infoconex.github.io/ai-flywheel-spec"
+        "INDEXNOW_SITE_URL", "https://ai-flywheel-spec.infoconex.com"
     ).rstrip("/")
     key = os.environ.get("INDEXNOW_KEY", "").strip()
     if not key:
@@ -39,7 +39,7 @@ def main() -> int:
             if node.text
             and node.text.strip()
             and urlparse(node.text.strip()).netloc.lower() == host
-            and urlparse(node.text.strip()).path.startswith("/ai-flywheel-spec/")
+            and urlparse(node.text.strip()).path.startswith("/")
         }
     )
     if not urls:
