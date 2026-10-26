@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -43,3 +43,32 @@ jobs:
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  notify-indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Determine previous successful submission
+        id: base
+        run: |
+          git fetch origin refs/tags/indexnow-last-submitted:refs/tags/indexnow-last-submitted || true
+          previous="$(git rev-list -n 1 refs/tags/indexnow-last-submitted 2>/dev/null || true)"
+          if [ -n "$previous" ] && git merge-base --is-ancestor "$previous" "$GITHUB_SHA"; then
+            echo "sha=$previous" >> "$GITHUB_OUTPUT"
+          else
+            echo "sha=0000000000000000000000000000000000000000" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Notify IndexNow
+        env:
+          INDEXNOW_SITE_URL: https://ai-flywheel-spec.infoconex.com
+          INDEXNOW_KEY: c75c60a5016c4f178e3f1404d43946d8
+          BASE_SHA: ${{ steps.base.outputs.sha }}
+          HEAD_SHA: ${{ github.sha }}
+        run: python3 scripts/indexnow.py
+      - name: Record successful notification
+        run: |
+          git tag -f indexnow-last-submitted "$GITHUB_SHA"
+          git push --force origin refs/tags/indexnow-last-submitted
